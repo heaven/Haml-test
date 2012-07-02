@@ -1,0 +1,22 @@
+%h1 Listing books
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - cache 'dashboard_books', :expires_delta => 5 do
+    - @books.all
+
+    - @books.first(10).each do |book|
+      %tr
+        %td= book.name
+        %td= link_to 'Show', book
+        %td= link_to 'Edit', edit_book_path(book)
+        %td= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Book', new_book_path

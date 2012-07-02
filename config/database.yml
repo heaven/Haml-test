@@ -1,0 +1,15 @@
+production:
+  adapter: mysql2
+  database: haml_test
+  host: localhost
+  username: heaven
+  password: '148887'
+  pool: 5
+
+development:
+  adapter: mysql2
+  database: haml_test
+  host: localhost
+  username: heaven
+  password: '148887'
+  pool: 5
